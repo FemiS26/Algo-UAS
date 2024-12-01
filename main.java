@@ -57,7 +57,7 @@ public class main {
         boolean exit = false;
         
         while (!exit) {
-            System.out.println("\n--- Kings Management System Game Menu ---");
+            System.out.println("\n--- Kings adi sigma Management System Game Menu ---");
             System.out.println("1. Create Kings");
             System.out.println("2. Update Kings Stats");
             System.out.println("3. Delete Kings Stats");
