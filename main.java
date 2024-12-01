@@ -7,6 +7,7 @@ public class main {
         private String name;
         private int hp;
         private int attackPower;
+        private String skills;
 
         public KingsManagementSystem(String name, int hp, int attackPower) {
             this.name = name;
@@ -56,7 +57,7 @@ public class main {
         boolean exit = false;
         
         while (!exit) {
-            System.out.println("\n--- Kings Management System Game Menu ---");
+            System.out.println("\n--- Kings adi sigma Management System Game Menu ---");
             System.out.println("1. Create Kings");
             System.out.println("2. Update Kings Stats");
             System.out.println("3. Delete Kings Stats");
