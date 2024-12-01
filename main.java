@@ -57,14 +57,15 @@ public class main {
         boolean exit = false;
         
         while (!exit) {
+            
             System.out.println("\n--- Kings adi sigma Management System Game Menu ---");
-            System.out.println("1. Create Kings");
-            System.out.println("2. Update Kings Stats");
-            System.out.println("3. Delete Kings Stats");
-            System.out.println("4. View All Kings");
-            System.out.println("5. Start Battle");
-            System.out.println("6. Exit");
-
+            System.out.println("""
+                    1. Create Kings
+                    2. Update Kings Stats
+                    3. Delete King Stats
+                    4. View All Kings
+                    5. Start Battle
+                    6. Exit""");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
