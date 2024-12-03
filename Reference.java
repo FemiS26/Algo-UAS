@@ -7,7 +7,6 @@ public class Reference {
         private String name;
         private int hp;
         private int attackPower;
-        private String skills;
 
         public KingsManagementSystem(String name, int hp, int attackPower) {
             this.name = name;
