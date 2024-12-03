@@ -132,7 +132,7 @@ public class Main2{
         } else {
             System.out.println("\n--- List of Kings ---");
             for (int i = 0; i < kingCount; i++) {
-                System.out.println(i + ". " + kingsArray[i]);
+                System.out.println((i+1) + ". " + kingsArray[i]);
             }
         }
     }
