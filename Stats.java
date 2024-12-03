@@ -1,67 +1,46 @@
-class Character {
+public class Stats {
     private String name;
-    private int health;
+    private int hp;
+    private int attackPower;
 
-    public Character(String name, int health) {
+    //
+    public Stats(String name, int hp, int attackPower){
         this.name = name;
-        this.health = health;
+        this.hp = hp;
+        this.attackPower = attackPower;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getHealth() {
-        return health;
+    public int getHp(){
+        return hp;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public int getAttackPower(){
+        return attackPower;
     }
 
-    public void displayStatus() {
-        System.out.println(name + " has " + health + " health remaining.");
-    }
-}
-
-class Attack {
-    private String attackName;
-    private int damage;
-
-    public Attack(String attackName, int damage) {
-        this.attackName = attackName;
-        this.damage = damage;
+    public void setHP(int hp){
+        this.hp = hp;
     }
 
-    public String getAttackName() {
-        return attackName;
+    public void setAttackPower(int attackPower){
+        this.attackPower = attackPower;
     }
 
-    public int getDamage() {
-        return damage;
+    public void takeDamage(int damage){
+        hp -= damage;
+        if(hp < 0) hp = 0;
     }
 
-    public void executeAttack(Character target) {
-        System.out.println("Using " + attackName + " for " + damage + " damage!");
-        int newHealth = target.getHealth() - damage;
-        target.setHealth(Math.max(newHealth, 0)); // Ensure health doesn't go below 0
+    public boolean isDefeated(){
+        return hp <= 0;
     }
-}
 
-public class Stats {
-    public static void main(String[] args) {
-        Character hero = new Character("Hero", 100);
-        Character monster = new Character("Monster", 80);
-
-        Attack fireball = new Attack("Fireball", 30);
-
-        System.out.println("Battle Start!");
-        hero.displayStatus();
-        monster.displayStatus();
-
-        System.out.println("\nHero attacks Monster!");
-        fireball.executeAttack(monster);
-
-        monster.displayStatus();
+    @Override
+    public String toString(){
+        return name + "(HP: " + hp + ", Attack Power: " + attackPower + ")";
     }
 }
