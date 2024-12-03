@@ -190,4 +190,26 @@ public class Main2{
             System.out.println("Invalid indices for battle.");
         }
     }
+
+    public class stack {
+        King[] stack;
+        int top;
+    
+        public stack(int size) {
+            stack = new King[size];
+            top = -1;
+        }
+    
+        public void push(King orders) {
+            if (top >= stack.length - 1) {
+                System.out.println("Stack overflow");
+                return;
+            }
+            stack[++top] = orders;
+        }
+    
+        public King peek(King orders) {
+            return stack[top];
+        }
+    }
 }
