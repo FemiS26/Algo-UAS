@@ -3,7 +3,6 @@ public class Stats {
     private int hp;
     private int attackPower;
 
-    //
     public Stats(String name, int hp, int attackPower){
         this.name = name;
         this.hp = hp;

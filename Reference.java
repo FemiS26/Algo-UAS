@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+public class Reference {
 
     public static class KingsManagementSystem {
         private String name;
