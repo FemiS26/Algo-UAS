@@ -1,7 +1,7 @@
 public class Stats {
-    private String name;
-    private int hp;
-    private int attackPower;
+    public String name;
+    public int hp;
+    public static int attackPower;
 
     public Stats(String name, int hp, int attackPower){
         this.name = name;

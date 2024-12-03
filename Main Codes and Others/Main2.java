@@ -1,46 +1,7 @@
 import java.util.Scanner;
 
 public class Main2{
-
-    public static class King {
-        private String name;
-        private int hp;
-        private int attackPower;
-
-        public King(String name, int hp, int attackPower) {
-            this.name = name;
-            this.hp = hp;
-            this.attackPower = attackPower;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getHp() {
-            return hp;
-        }
-
-        public int getAttackPower() {
-            return attackPower;
-        }
-
-        public void setHp(int hp) {
-            this.hp = hp;
-        }
-
-        public void takeDamage(int damage) {
-            this.hp -= damage;
-            if (hp < 0) hp = 0;
-        }
-
-        @Override
-        public String toString() {
-            return name + " (HP: " + hp + ", Attack Power: " + attackPower + ")";
-        }
-    }
-
-    private static King[] kingsArray = new King[100];
+    private static Stats[] statsArray = new Stats[100];
     private static int kingCount = 0;
     private static Scanner scanner = new Scanner(System.in);
 
@@ -89,7 +50,7 @@ public class Main2{
 
 
     public static void createKing() {
-        if (kingCount >= kingsArray.length) {
+        if (kingCount >= statsArray.length) {
             System.out.println("No space left to create new kings.");
             return;
         }
@@ -101,7 +62,7 @@ public class Main2{
         System.out.print("Enter Attack Power: ");
         int attackPower = scanner.nextInt();
 
-        kingsArray[kingCount++] = new King(name, hp, attackPower);
+        statsArray[kingCount++] = new Stats(name, hp, attackPower);
         System.out.println("King created successfully.");
     }
 
@@ -111,13 +72,13 @@ public class Main2{
         int index = scanner.nextInt();
 
         if (index >= 0 && index < kingCount) {
-            King king = kingsArray[index];
+            Stats king = statsArray[index];
             System.out.print("Enter new HP for " + king.getName() + ": ");
             int newHp = scanner.nextInt();
             System.out.print("Enter new Attack Power for " + king.getName() + ": ");
             int newAttackPower = scanner.nextInt();
 
-            king.setHp(newHp);
+            king.setHP(newHp);
             king.attackPower = newAttackPower;
             System.out.println("King updated successfully.");
         } else {
@@ -132,7 +93,7 @@ public class Main2{
         } else {
             System.out.println("\n--- List of Kings ---");
             for (int i = 0; i < kingCount; i++) {
-                System.out.println(i + ". " + kingsArray[i]);
+                System.out.println(i + ". " + statsArray[i]);
             }
         }
     }
@@ -141,11 +102,10 @@ public class Main2{
     public static void sortKingsByAttackPower() {
         for (int i = 0; i < kingCount - 1; i++) {
             for (int j = 0; j < kingCount - i - 1; j++) {
-                if (kingsArray[j].getAttackPower() < kingsArray[j + 1].getAttackPower()) {
-
-                    King temp = kingsArray[j];
-                    kingsArray[j] = kingsArray[j + 1];
-                    kingsArray[j + 1] = temp;
+                if (statsArray[j].getAttackPower() < statsArray[j + 1].getAttackPower()) {
+                    Stats temp = statsArray[j];
+                    statsArray[j] = statsArray[j + 1];
+                    statsArray[j + 1] = temp;
                 }
             }
         }
@@ -165,8 +125,8 @@ public class Main2{
         int index2 = scanner.nextInt();
 
         if (index1 >= 0 && index1 < kingCount && index2 >= 0 && index2 < kingCount && index1 != index2) {
-            King king1 = kingsArray[index1];
-            King king2 = kingsArray[index2];
+            Stats king1 = statsArray[index1];
+            Stats king2 = statsArray[index2];
 
             System.out.println("\nStarting battle between " + king1.getName() + " and " + king2.getName() + "!");
             while (king1.getHp() > 0 && king2.getHp() > 0) {
