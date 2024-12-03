@@ -58,7 +58,7 @@ public class main {
         
         while (!exit) {
             
-            System.out.println("\n--- Kings adi sigma Management System Game Menu ---");
+            System.out.println("\n--- Kings Management System Game Menu ---");
             System.out.println("""
                     1. Create Kings
                     2. Update Kings Stats
