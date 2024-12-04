@@ -6,19 +6,20 @@ public class Main2{
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        boolean exit = false;
+        int choice;
 
-        while (!exit) {
-            System.out.println("\n--- Kings Management System Menu ---");
-            System.out.println("1. Create King");
-            System.out.println("2. Update King");
-            System.out.println("3. View All Kings");
-            System.out.println("4. Sort Kings by Attack Power");
-            System.out.println("5. Battle Simulation");
-            System.out.println("6. Exit");
-
-            System.out.print("Choose an option: ");
-            int choice = scanner.nextInt();
+        do {
+            System.out.println("\n===== King Management System =====");
+            System.out.println("""
+                    1. Create King
+                    2. View All Kings
+                    3. Update Kings
+                    4. Delete Kings
+                    5. Battle Kings
+                    6. View Defeat / Deleted King
+                    7. Exit Game""");
+            System.out.print("Choose an Option: ");
+            choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
@@ -37,14 +38,18 @@ public class Main2{
                     battleSimulation();
                     break;
                 case 6:
-                    exit = true;
+
+                break;
+
+                case 7:
+                    System.exit(0);
                     System.out.println("Exiting the program.");
                     break;
                 default:
                     System.out.println("Invalid choice, please try again.");
             }
+        } while(choice != 7);
         }
-    }
 
 
     public static void createKing() {
