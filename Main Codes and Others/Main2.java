@@ -6,6 +6,7 @@ public class Main2{
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        King[] Kings = createKings();
         int choice;
         String nameSearch;
         stack KingStack = new stack(10);
@@ -29,7 +30,8 @@ public class Main2{
                     createKing();
                     break;
                 case 2:
-                    updateKing();
+                    bubbleSort(Kings);
+                    printKings(Kings,KingCount);
                     break;
                 case 3:
                     viewAllKings();
@@ -93,16 +95,36 @@ public class Main2{
     }
 
 
-    public static void viewAllKings() {
-        if (kingCount == 0) {
-            System.out.println("No kings available.");
+   // Print King All
+   public static void printKings(King[] Kings, int KingCount) {
+        if (KingCount == 0) {
+            System.out.println("No King Available!");
         } else {
-            System.out.println("\n--- List of Kings ---");
-            for (int i = 0; i < kingCount; i++) {
-                System.out.println(i + ". " + statsArray[i]);
+        for (int i=0; i<Kings.length; i++) {
+            if (Kings[i] != null) {
+            Kings[i].printKing();
+            System.out.println();
+            } 
+        }
+    }
+
+    // View All Sorting
+    static void bubbleSort(King[] Kings) {
+        int i, j;
+        King tempo;
+        for(i=0; i < Kings.length - 1; i++) {
+            for(j=0; j < Kings.length - i - 1; j++) {
+                if( Kings[j] != null && Kings[j + 1] != null && Kings[j].name.compareTo(Kings[j + 1].name) > 0) {
+                    tempo = Kings[j];
+                    Kings[j] = Kings[j + 1];
+                    Kings[j + 1] = tempo;
+                
+                }
             }
         }
     }
+}
+// End of Print All King
 
 
     public static void sortKingsByAttackPower() {
