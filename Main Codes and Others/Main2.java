@@ -75,24 +75,27 @@ public class Main2{
     }
 
 
-    public static void updateKing() {
-        System.out.print("Enter the index of the king to update: ");
-        int index = scanner.nextInt();
+    // Update King
+    public static King[] updateKing(King[] Kings, String nameSearch) {
+        for (int i=0; i<Kings.length; i++) {
+            if(Kings[i] != null && Kings[i].name.equals(nameSearch)) {
+                System.out.print("Enter New HP: ");
+                int newHP = scanner.nextInt();
+                System.out.print("Enter New Attack: ");
+                int newAttack = scanner.nextInt();
 
-        if (index >= 0 && index < kingCount) {
-            Stats king = statsArray[index];
-            System.out.print("Enter new HP for " + king.getName() + ": ");
-            int newHp = scanner.nextInt();
-            System.out.print("Enter new Attack Power for " + king.getName() + ": ");
-            int newAttackPower = scanner.nextInt();
+                Kings[i].hp = newHP;
+                Kings[i].attack = newAttack;
+                System.out.println(Kings[i].name + " updated successfully");
 
-            king.setHP(newHp);
-            king.attackPower = newAttackPower;
-            System.out.println("King updated successfully.");
-        } else {
-            System.out.println("Invalid index.");
+                return Kings;
+            }
         }
-    }
+        System.out.println("Not Found.");
+        return Kings;
+        
+    } 
+    // End of Update King
 
 
    // Print King All
