@@ -31,7 +31,7 @@ public class Main2{
                     break;
                 case 2:
                     bubbleSort(Kings);
-                    printKings(Kings,KingCount);
+                    printKings(Kings, KingCount);
                     break;
                 case 3:
                     viewAllKings();
@@ -107,6 +107,7 @@ public class Main2{
             } 
         }
     }
+    }
 
     // View All Sorting
     static void bubbleSort(King[] Kings) {
@@ -123,7 +124,6 @@ public class Main2{
             }
         }
     }
-}
 // End of Print All King
 
 
