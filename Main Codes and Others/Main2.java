@@ -59,6 +59,7 @@ public class Main2{
                     battleManager.startBattle(index1, index2, KingStack);
                     break;
                 case 6:
+                KingStack.printStack();
 
                 break;
 
