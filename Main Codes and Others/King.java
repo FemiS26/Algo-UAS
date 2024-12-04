@@ -23,6 +23,32 @@ public class King {
         return hp;
     }
 
+    public int getAttackPower() {
+        return attack;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attack = attackPower;
+    }
+
+    public void takeDamage(int damage) {
+        hp -= damage;
+        if (hp < 0) hp = 0;
+    }
+
+    public boolean isDefeated() {
+        return hp <= 0;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (HP: " + hp + ", Attack Power: " + attack + ")";
+    }
+
     public void printKing() {
         System.out.printf("%s (Health: %d, Attack: %d)", name, hp, attack);
     }
