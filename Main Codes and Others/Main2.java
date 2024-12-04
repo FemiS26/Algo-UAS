@@ -27,7 +27,15 @@ public class Main2{
 
             switch (choice) {
                 case 1:
-                    createKing();
+                System.out.print("Insert King Name: ");
+                String name = scanner.next();
+                System.out.print("Insert HP of King: ");
+                int hp = scanner.nextInt();
+                System.out.print("Insert Attack of King: ");
+                int attack = scanner.nextInt();
+                King newKing = new King(name, hp, attack);
+                Kings = addKing(Kings, newKing);
+                KingCount++;
                     break;
                 case 2:
                     bubbleSort(Kings);
@@ -62,6 +70,19 @@ public class Main2{
 
     public static King[] createKings() {
         King[] Kings = new King[30];
+        return Kings;
+    }
+
+    public static King[] addKing(King[] Kings, King newKing) {
+        for (int i=0; i<Kings.length; i++) {
+            if (Kings[i] == null) {
+                Kings[i] = newKing;
+                System.out.println(newKing.name + " has been added.");
+                bubbleSort(Kings);
+                return Kings;
+            }
+        }
+        System.out.println("Array is full.");
         return Kings;
     }
 
