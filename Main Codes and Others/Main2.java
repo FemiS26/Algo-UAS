@@ -7,6 +7,9 @@ public class Main2{
 
     public static void main(String[] args) {
         int choice;
+        String nameSearch;
+        stack KingStack = new stack(10);
+        int KingCount = 0;
 
         do {
             System.out.println("\n===== King Management System =====");
