@@ -7,6 +7,7 @@ public class Main2{
 
     public static void main(String[] args) {
         King[] Kings = createKings();
+        BattleManager battleManager = new BattleManager(Kings);
         int choice;
         String nameSearch;
         stack KingStack = new stack(10);
@@ -51,7 +52,11 @@ public class Main2{
                 KingCount--;
                     break;
                 case 5:
-                    
+                System.out.print("Enter the index of the first Kings to battle: ");
+                    int index1 = scanner.nextInt();
+                    System.out.print("Enter the index of the second Kings to battle: ");
+                    int index2 = scanner.nextInt();
+                    battleManager.startBattle(index1, index2, KingStack);
                     break;
                 case 6:
 
