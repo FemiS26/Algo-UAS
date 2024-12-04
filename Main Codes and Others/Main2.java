@@ -37,7 +37,10 @@ public class Main2{
                     
                     break;
                 case 4:
-                    
+                System.out.print("Enter the Name of King: ");
+                nameSearch = scanner.next();
+                Kings = deleteKing(Kings, nameSearch, KingStack);
+                KingCount--;
                     break;
                 case 5:
                     
@@ -57,21 +60,9 @@ public class Main2{
         }
 
 
-    public static void createKing() {
-        if (kingCount >= statsArray.length) {
-            System.out.println("No space left to create new kings.");
-            return;
-        }
-
-        System.out.print("Enter name: ");
-        String name = scanner.next();
-        System.out.print("Enter HP: ");
-        int hp = scanner.nextInt();
-        System.out.print("Enter Attack Power: ");
-        int attackPower = scanner.nextInt();
-
-        statsArray[kingCount++] = new Stats(name, hp, attackPower);
-        System.out.println("King created successfully.");
+    public static King[] createKings() {
+        King[] Kings = new King[30];
+        return Kings;
     }
 
 
