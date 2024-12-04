@@ -127,20 +127,6 @@ public class Main2{
 // End of Print All King
 
 
-    public static void sortKingsByAttackPower() {
-        for (int i = 0; i < kingCount - 1; i++) {
-            for (int j = 0; j < kingCount - i - 1; j++) {
-                if (statsArray[j].getAttackPower() < statsArray[j + 1].getAttackPower()) {
-                    Stats temp = statsArray[j];
-                    statsArray[j] = statsArray[j + 1];
-                    statsArray[j + 1] = temp;
-                }
-            }
-        }
-        System.out.println("Kings sorted by Attack Power.");
-    }
-
-
     public static void battleSimulation() {
         if (kingCount < 2) {
             System.out.println("At least two kings are required for a battle.");
