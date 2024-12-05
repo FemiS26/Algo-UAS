@@ -19,7 +19,7 @@ public class Main2 {
                     4. Delete Kings
                     5. Battle Kings (PVP)
                     6. Battle with Monsters
-                    7. View Defeat / Deleted King
+                    7. View and Restore Defeat King
                     0. Exit Game""");
             System.out.print("Choose an Option: ");
             choice = scan.nextInt();
@@ -71,9 +71,11 @@ public class Main2 {
                     int index2 = scan.nextInt();
                     battleManager.startBattle(index1, index2, KingStack);
                 break;
-                
 
                 case 6:
+
+                break;
+                case 7:
                 KingStack.printStack(Kings);
 
                 break;
@@ -84,7 +86,7 @@ public class Main2 {
                 break;
 
                 default:
-                System.out.println("Choose an Option from Above!");
+                System.out.println("Invalid choice!");
                 break;
             }
         } while(choice != 7);
