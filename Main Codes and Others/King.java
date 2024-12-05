@@ -54,7 +54,7 @@ public class King {
         
         for (int i=0; i<Kings.length; i++) {
         if (Kings[i] != null) {
-        System.out.printf("%s. %s (Health: %d, Attack: %d)", (i+1), name, hp, attack);
+        System.out.printf("- %s (Health: %d, Attack: %d)", name, hp, attack);
         }
         }
     }
