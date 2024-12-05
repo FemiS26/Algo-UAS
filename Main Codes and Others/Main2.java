@@ -17,9 +17,10 @@ public class Main2 {
                     2. View All Kings
                     3. Update Kings
                     4. Delete Kings
-                    5. Battle Kings
-                    6. View Defeat / Deleted King
-                    7. Exit Game""");
+                    5. Battle Kings (PVP)
+                    6. Battle with Monsters
+                    7. View Defeat / Deleted King
+                    0. Exit Game""");
             System.out.print("Choose an Option: ");
             choice = scan.nextInt();
 
@@ -77,9 +78,9 @@ public class Main2 {
 
                 break;
 
-                case 7:
-                System.exit(0);
+                case 0:
                 System.out.println("Exiting the program...");
+                System.exit(0);
                 break;
 
                 default:
