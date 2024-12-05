@@ -51,11 +51,6 @@ public class King {
     }
     
     public void printKing(King[] Kings) {
-        
-        for (int i=0; i<Kings.length; i++) {
-        if (Kings[i] != null) {
         System.out.printf("- %s (Health: %d, Attack: %d)", name, hp, attack);
-        }
-        }
     }
 }
