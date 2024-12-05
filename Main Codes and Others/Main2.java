@@ -150,7 +150,7 @@ public class Main2{
      // Delete King
      public static King[] deleteKing(King[] Kings, String nameSearch, stack KingStack) {
         for (int i=0; i<Kings.length; i++) {
-            if(Kings[i].name.equals(nameSearch)) {
+            if(Kings[i] != null && Kings[i].name.equals(nameSearch)) {
                 KingStack.push(Kings[i]);
                 Kings[i] = null;
                 System.out.println(nameSearch + " has been deleted.");
