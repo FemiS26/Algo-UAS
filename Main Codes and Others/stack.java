@@ -20,13 +20,13 @@ public class stack {
         return KingStack[top];
     }
 
-    public void printStack() {
+    public void printStack(King[] Kings) {
         if (top == -1) {
             System.out.println("No defeated kings.");
         } else {
             System.out.println("Defeated Kings:");
             for (int i = top; i >= 0; i--) {
-                KingStack[i].printKing();
+                KingStack[i].printKing(Kings);
                 System.out.println();
             }
         }

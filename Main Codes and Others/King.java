@@ -9,6 +9,7 @@ public class King {
         this.attack = attack;
     }
 
+
     public void KingsManagementSystem(String name, int hp, int attack) {
         this.name = name;
         this.hp = hp;
@@ -48,8 +49,13 @@ public class King {
     public String toString() {
         return name + " (HP: " + hp + ", Attack Power: " + attack + ")";
     }
-
-    public void printKing() {
-        System.out.printf("%s (Health: %d, Attack: %d)", name, hp, attack);
+    
+    public void printKing(King[] Kings) {
+        
+        for (int i=0; i<Kings.length; i++) {
+        if (Kings[i] != null) {
+        System.out.printf("%s. %s (Health: %d, Attack: %d)", (i+1), name, hp, attack);
+        }
+        }
     }
 }
