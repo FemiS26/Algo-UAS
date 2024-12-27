@@ -17,9 +17,7 @@ public class Main2 {
                     2. View All Kings
                     3. Update Kings
                     4. Delete Kings
-                    5. Battle Kings (PVP)
-                    6. Battle with Monsters
-                    7. View and Restore Defeat King
+                    5. Survival
                     0. Exit Game""");
             System.out.print("Choose an Option: ");
             choice = scan.nextInt();
@@ -64,21 +62,13 @@ public class Main2 {
                 Kings = deleteKing(Kings, nameSearch, KingStack);
                 break;
 
-                case 5:
-                System.out.print("Enter the index of the first Kings to battle: ");
-                    int index1 = scan.nextInt();
-                    System.out.print("Enter the index of the second Kings to battle: ");
-                    int index2 = scan.nextInt();
-                    battleManager.startBattle(index1, index2, KingStack);
-                break;
-
-                case 6:
-
-                break;
-                case 7:
-                KingStack.printStack(Kings);
-
-                break;
+               // case 5:
+               // System.out.print("Enter the index of the first Kings to battle: ");
+                 //   int index1 = scan.nextInt();
+                //    System.out.print("Enter the index of the second Kings to battle: ");
+                 //   int index2 = scan.nextInt();
+                //    battleManager.startBattle(index1, index2, KingStack);
+               // break;
 
                 case 0:
                 System.out.println("Exiting the program...");
@@ -89,7 +79,7 @@ public class Main2 {
                 System.out.println("Invalid choice!");
                 break;
             }
-        } while(choice != 7);
+        } while(choice !=0);
     }
 
     // Create King
@@ -101,7 +91,7 @@ public class Main2 {
         }
         
 
-        Kings[0] = new King("Boss", 1000, 20);
+        
 
         return Kings;
     }
