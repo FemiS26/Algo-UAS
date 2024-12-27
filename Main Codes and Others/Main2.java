@@ -5,6 +5,7 @@ public class Main2 {
 
     public static void main(String[] args) {
         King[] Kings = createKings();
+        Enemy[] Enemys = createEnemy();
         BattleManager battleManager = new BattleManager(Kings);
         int choice;
         String nameSearch;
@@ -18,6 +19,7 @@ public class Main2 {
                     3. Update Kings
                     4. Delete Kings
                     5. Survival
+                    6. View All Enemy
                     0. Exit Game""");
             System.out.print("Choose an Option: ");
             choice = scan.nextInt();
@@ -69,6 +71,14 @@ public class Main2 {
                  //   int index2 = scan.nextInt();
                 //    battleManager.startBattle(index1, index2, KingStack);
                // break;
+               case 5:
+
+               break;
+
+               case 6:
+               System.out.println("===== List of Enemys =====");
+               printEnemy(Enemys);
+               break;
 
                 case 0:
                 System.out.println("Exiting the program...");
@@ -84,15 +94,12 @@ public class Main2 {
 
     // Create King
     public static King[] createKings() {
-        King[] Kings = new King[30];
+        King[] Kings = new King[2];
 
         for (int i=0; i < Kings.length; i++) {
             Kings[i] = null;
         }
         
-
-        
-
         return Kings;
     }
 
@@ -105,7 +112,7 @@ public class Main2 {
                 return Kings;
             }
         }
-        System.out.println("Array is full.");
+        System.out.println("Array is full. Max Kings are 2");
         return Kings;
     }
     // End of Create King
@@ -116,17 +123,53 @@ public class Main2 {
         for (int i=0; i<Kings.length; i++) {
         if (Kings[i] == null) {
             System.out.println("No King Available!");
-        } else {
+        } 
         for (i=0; i<Kings.length; i++) {
             if (Kings[i] != null) {
             Kings[i].printKing(Kings);
             System.out.println();
-            } 
+    
         }
     }
         }
     }
     // End of Print All King
+
+    public static Enemy[] createEnemy() {
+        Enemy[] Enemys = new Enemy[30];
+
+        for (int i=0; i < Enemys.length; i++) {
+            Enemys[i] = null;
+        }
+
+        Enemys[0] = new Enemy("Diddler", 1000, 300, 499);
+        Enemys[1] = new Enemy("Skibidi", 200, 490, 300);
+        Enemys[2] = new Enemy("Drake", 500, 400, 300);
+        Enemys[3] = new Enemy("Elon Musk", 500, 400, 300);
+        Enemys[4] = new Enemy("Holden", 2000, 400, 200);
+
+
+        
+
+        
+
+        return Enemys;
+    }
+
+    public static void printEnemy(Enemy[] Enemys) {
+        for (int i=0; i<Enemys.length; i++) {
+        if (Enemys[i] == null) {
+            System.out.println("No Enemy Available!");
+        } 
+        for (i=0; i<Enemys.length; i++) {
+            if (Enemys[i] != null) {
+            Enemys[i].printEnemy(Enemys);
+            System.out.println();
+    
+        }
+    }
+        }
+    }
     
     
     // Update King
